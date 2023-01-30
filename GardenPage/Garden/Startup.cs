@@ -28,17 +28,18 @@ namespace Garden
             }
             
             // 미들웨어 추가
-            app.UseStaticFiles(); // wwwroot에 있는 정적인 HTML, CSS, Javascript, 이미지 등 실행을 위해 필요한 메소드
+            //app.UseStaticFiles(); // wwwroot에 있는 정적인 HTML, CSS, Javascript, 이미지 등 실행을 위해 필요한 메소드
+            app.UseFileServer(); // UseStaticFiles + 기본 문서 등록 기능까지 추가
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages(); // 해당 메서드 추가
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
             });
         }
     }
