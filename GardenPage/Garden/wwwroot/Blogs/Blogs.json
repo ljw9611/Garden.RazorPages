@@ -15,6 +15,24 @@
 		"id": 3,
 		"title": "고양이",
 		"description": "고양이가 상당히 귀여움",
+		"img": "/Blogs/Image/5.jpg"
+	},
+	{
+		"id": 4,
+		"title": "안개, 산",
+		"description": "안개가 껴있는 산",
+		"img": "/Blogs/Image/4.jpg"
+	},
+	{
+		"id": 5,
+		"title": "호수가 있는 산",
+		"description": "호수가 있는 산",
 		"img": "/Blogs/Image/3.jpg"
+	},
+	{
+		"id": 6,
+		"title": "고양이",
+		"description": "고양이가 상당히 귀여움",
+		"img": "/Blogs/Image/6.jpg"
 	}
 ]

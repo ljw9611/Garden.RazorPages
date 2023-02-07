@@ -1,6 +1,7 @@
 @page
 
 @using Garden.Models
+@using Garden.Services
 
 @*@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers *@
 
@@ -8,12 +9,14 @@
     ViewBag.Title = "Index";
     //string[] portfolios = { "ONE", "Two", "Three", "Four", "Five", "Six"};
     // 배열이 아닌 인메모리로 잡은 컬렉션 데이터 형태로 출력
-    List<Blog> Blogs = new List<Blog>() //Blogs 변수를 컬렉션 형태로 변환
-    {
-        new Blog { Id = 1, Title = ".NET", Description = "ASP.NET Core"},
-        new Blog { Id = 2, Title = "Java", Description = "Spring Boot"},
-        new Blog { Id = 3, Title = "Javascript", Description = "React"}
-    };
+    //List<Blog> Blogs = new List<Blog>() //Blogs 변수를 컬렉션 형태로 변환
+    //{
+    //    new Blog { Id = 1, Title = ".NET", Description = "ASP.NET Core"},
+    //    new Blog { Id = 2, Title = "Java", Description = "Spring Boot"},
+    //    new Blog { Id = 3, Title = "Javascript", Description = "React"}
+    //};
+
+    var Blogs = (new BlogServiceJsonFile()).GetBlogs();
 }
 
             <!-- Header-->
@@ -50,7 +53,7 @@
                     {
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                                <img class="card-img-top" src="@Blog.Image" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">@Blog.Title</h5></a>
