@@ -10,7 +10,8 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        
+        <link href="~/css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -26,20 +27,8 @@
                         <li class="nav-item"><a class="nav-link" asp-page="/Contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" asp-page="/Pricing">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" asp-page="/Faq">FAQ</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a class="dropdown-item" asp-page="/Blog/BlogList">Blog Home</a></li>
-                                <li><a class="dropdown-item" asp-page="/Blog/BlogDetails">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-                                </ul>
-                            </li>
+                        <li class="nav-item"><a class="nav-link" asp-page="/Protfolio/Index">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-page="/Blog/BlogList">Blog</a></li>
                         </ul>
 
                     <ul class="navbar-nav">

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GardenPage", "GardenPage\GardenPage.csproj", "{E92D8A73-E0B2-4317-9964-1297CB23A049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GardenPage", "GardenPage\GardenPage.csproj", "{E92D8A73-E0B2-4317-9964-1297CB23A049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garden", "Garden\Garden.csproj", "{37F4199D-D0DC-4AAF-9C36-3630BA295C87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garden", "Garden\Garden.csproj", "{37F4199D-D0DC-4AAF-9C36-3630BA295C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
