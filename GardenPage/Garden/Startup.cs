@@ -19,6 +19,7 @@ namespace Garden
         {
             services.AddRazorPages(); // 해당 메서드 추가
             services.AddTransient<BlogServiceJsonFile>(); // DI Container
+            services.AddTransient<PortfolioServiceJsonFile>(); // DI Container
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
