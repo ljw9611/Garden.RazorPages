@@ -6,15 +6,15 @@
 <h2>Blazor 컴포넌트 사용 출력</h2>
 <!-- row -->
 <div class="row gx-5">
-    @foreach (var Blog in PortfolioService.GetPortfolios())
+    @foreach (var portfolio in PortfolioService.GetPortfolios())
     {
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
-                <img class="card-img-top" src="@Blog.Image" alt="..." />
+                <img class="card-img-top" src="@portfolio.Image" alt="..." />
                 <div class="card-body p-4">
                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">@Blog.Title</h5></a>
-                    <p class="card-text mb-0">@Blog.Description</p>
+                    <h5 class="card-title mb-3">@portfolio.Title</h5>
+                    <p class="card-text mb-0">@portfolio.Description</p>
                 </div>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
@@ -27,12 +27,46 @@
                         </div>
                     </div>
                 </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" 
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModal"
+                @onclick="() => SelectPortfolio(portfolio.Id)"
+                >
+                    Preview
+                </button>
             </div>
         </div>
     }
 </div>
 <!-- ./row-->
 
-@code {
+@if (selectedPortfolio != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">@selectedPortfolio.Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @selectedPortfolio.Description
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
+@code {
+    Portfolio selectedPortfolio = new Portfolio();
+    void SelectPortfolio(int portfolioId)
+    {
+         selectedPortfolio = PortfolioService.GetPortfolios().First(p => p.Id == portfolioId);
+    }
 }
