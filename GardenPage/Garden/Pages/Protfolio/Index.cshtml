@@ -4,12 +4,16 @@
     ViewData["Title"] = "Portfolio";
 }
 
+@using Garden.Components
+
 <!-- Page Content-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">portfolio</h1>
-                    </div>
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder">portfolio</h1>
+        </div>
+        <h2>Razor Page 사용 출력</h2>
+        <!-- row -->
         <div class="row gx-5">
             @foreach (var Blog in Model.Portfolios)
             {
@@ -36,11 +40,9 @@
                 </div>
             }
         </div>
-                </div>
-            </section>
-            <section class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                    <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
-                </div>
-            </section>
+        <!-- ./row-->
+        <hr />
+        <component type="typeof(PortfolioList)" render-mode="ServerPrerendered"></component>
+        <script src="_framework/blazor.server.js"></script>
+    </div>
+</section>

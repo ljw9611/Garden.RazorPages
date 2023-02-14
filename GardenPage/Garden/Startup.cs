@@ -18,6 +18,7 @@ namespace Garden
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages(); // 해당 메서드 추가
+            services.AddServerSideBlazor(); // (!) 블레이저 서버를 사용할 수 있는 가장 기본적 단계
             services.AddTransient<BlogServiceJsonFile>(); // DI Container
             services.AddTransient<PortfolioServiceJsonFile>(); // DI Container
         }
@@ -39,6 +40,7 @@ namespace Garden
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages(); // 해당 메서드 추가
+                endpoints.MapBlazorHub(); // (!) 블레이저 서버를 사용할 수 있는 가장 기본적 단계
                 //endpoints.MapGet("/", async context =>
                 //{
                 //    await context.Response.WriteAsync("Hello World!");
