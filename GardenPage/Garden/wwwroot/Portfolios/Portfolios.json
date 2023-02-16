@@ -1,20 +1,33 @@
 [
-	{
-		"id": 1,
-		"title": "안개, 산",
-		"description": "안개가 껴있는 산",
-		"img": "/Blogs/Image/4.jpg"
-	},
-	{
-		"id": 2,
-		"title": "호수가 있는 산",
-		"description": "호수가 있는 산",
-		"img": "/Blogs/Image/3.jpg"
-	},
-	{
-		"id": 3,
-		"title": "버섯",
-		"description": "버섯 징그러",
-		"img": "/Blogs/Image/6.jpg"
-	}
+  {
+    "Id": 1,
+    "Title": "\uC548\uAC1C, \uC0B0",
+    "Description": "\uC548\uAC1C\uAC00 \uAEF4\uC788\uB294 \uC0B0",
+    "img": "/Blogs/Image/4.jpg",
+    "Ratings": [
+      4
+    ]
+  },
+  {
+    "Id": 2,
+    "Title": "\uD638\uC218\uAC00 \uC788\uB294 \uC0B0",
+    "Description": "\uD638\uC218\uAC00 \uC788\uB294 \uC0B0",
+    "img": "/Blogs/Image/3.jpg",
+    "Ratings": [
+      1,
+      3,
+      3,
+      1,
+      5
+    ]
+  },
+  {
+    "Id": 3,
+    "Title": "\uBC84\uC12F",
+    "Description": "\uBC84\uC12F \uC9D5\uADF8\uB7EC",
+    "img": "/Blogs/Image/6.jpg",
+    "Ratings": [
+      3
+    ]
+  }
 ]

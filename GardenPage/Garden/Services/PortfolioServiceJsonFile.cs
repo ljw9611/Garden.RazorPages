@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 // Json 파일을 읽어들여 컬렌션으로 변환해주는 서비스 클래스
@@ -36,6 +37,29 @@ namespace Garden.Services
                 var Portfolios = JsonSerializer.Deserialize<Portfolio[]>(jsonFileReader.ReadToEnd(), options);
                 return Portfolios;
             }
+        }
+
+        public void AddRating(int portfolioId, int rating)
+        {
+            var portfolios = GetPortfolios();
+
+            if(portfolios.First(p => p.Id == portfolioId).Ratings == null)
+            {
+                portfolios.First(p => p.Id == portfolioId).Ratings = new int[] { rating };
+            }
+            else
+            {
+                var ratings = portfolios.First(p => p.Id == portfolioId).Ratings.ToList();
+                ratings.Add(rating);
+                portfolios.First(p => p.Id == portfolioId).Ratings = ratings.ToArray();
+            }
+
+            using var outputStream = File.OpenWrite(JsonFileName);
+            JsonSerializer.Serialize<IEnumerable<Portfolio>>
+                (new Utf8JsonWriter(outputStream, new JsonWriterOptions 
+                { 
+                    SkipValidation = true, Indented = true 
+                }), portfolios);
         }
     }
 }

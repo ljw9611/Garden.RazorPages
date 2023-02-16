@@ -17,6 +17,8 @@ namespace Garden.Models
         [JsonPropertyName("img")]
         public string Image { get; set; }
 
+        public int[] Ratings { get; set; }
+
         public override string ToString() // 문자열로 반환
         {
             return JsonSerializer.Serialize<Portfolio>(this);
